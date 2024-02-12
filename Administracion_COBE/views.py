@@ -67,5 +67,3 @@ def InformacionUsuario():
 
     informacion_personal = personal_obj.Matricula
     Matricula = informacion_personal.Matricula
-    print(Matricula)
-    print(username)
