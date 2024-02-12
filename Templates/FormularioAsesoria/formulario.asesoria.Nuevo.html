@@ -1,0 +1,125 @@
+{% extends "home.html" %}
+
+{% block title %} Generar Asesoria {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    
+    <div class="alert alert-danger m-1  oculto" id="alerta" role="alert"></div>
+
+    <form method="POST" class="my-2 mx-3 row ">
+        {% csrf_token %}
+    <fieldset class="row mb-1 d-flex">
+        <legend class=" col-lg-10 h2">Generar Asesoria</legend>
+        <input type="submit" class="col-lg-2 align-self-center btn btn-success mt-2" id="EnviarAsesoria" value="Enviar Asesoria">
+    </fieldset>
+
+        <fieldset class="p-3 pb-1 mb-0 col-md-6">
+            <div class="border rounded-3 shadow  p-3 row  ">
+                <legend class="h5 text-muted  mb-3 pb-2  border-bottom">Datos de Contacto</legend>
+                <div class="col-md-6">
+                    <label for="Nombre" class="form-label" ><i class="icon ion-md-person"></i>
+                        Nombre Alumno:</label>
+                    <input type="text" class="form-control" id="Nombre" >
+                </div>
+                <div class="col-md-6">
+                    <label for="telefono" class="form-label "><i class="icon ion-md-call"></i>
+                        Numero de Contacto:</label>
+                    <input type="text" class="form-control" id="telefono">
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="" class="form-label "><i class="icon ion-md-mail"></i>
+                        Correo Institucional:</label>
+                    <div class="input-group">
+                        <input type="text" id="correo" class="form-control" placeholder="al@@@@@@" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
+                        <span class="input-group-text" id="basic-addon2">@alumnos.uacj.mx</span>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="p-3 pb-1 mb-0 col-md-6  ">
+            <div class="border rounded-3 shadow  p-3 row">
+                <legend class="h5 text-muted  mb-3 pb-2  border-bottom ">Datos Academicos</legend>
+                <div class="col-md-4">
+                    <label for="Matricula" class="form-label " ><i class="icon ion-md-medical"></i>
+                        Matricula:</label>
+                    <input type="text" class="form-control" id="Matricula" disabled>
+                </div>
+                <div class="col-md-4">
+                    <label for="semestre" class="form-label "><i class="icon ion-md-bulb"></i>
+                        Semestre:</label>
+                    <input type="text" class="form-control" id="semestre">
+                </div>
+                
+                <div class="col-md-4">
+                    <label class="form-label "><i class="icon ion-md-create"></i>
+                        No. Materias:</label>
+                    <input type="text" class="form-control" id="Num_materias">
+                </div>
+
+                <div class="col-md-12 mt-2 ">
+                    <label for="carrera" class="form-label " ><i class="icon ion-md-school"></i>
+                        Programa Academico</label>
+                    <select class="form-select text-muted " id="carrera"  aria-label="Default select example">
+                       <option value="0">Elige un Programa Academico</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="p-3 col-md-9 ">
+            <div class="border rounded-3 shadow p-3 row">
+                <legend class="h5 text-muted mb-3 pb-2 border-bottom ">Datos Asesoria</legend>
+                <div class="col-md-9">
+                    <label for="materia" class="form-label "><i class="icon ion-md-ribbon"></i>
+                        Materia:</label>
+                    <select class="form-select text-muted " id="materia"  aria-label="Default select example">
+                        <option value="0"> Elige una Materia </option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="reprobadas" class="form-label "><i class="icon ion-md-close"></i>
+                        Veces Reprobadas:</label>
+                    <input type="number" class="form-control" id="reprobadas">
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="tema" class="form-label "><i class="icon ion-md-clipboard"></i>
+                        Tema:</label>
+                    <select class="form-select text-muted " id="tema"  aria-label="Default select example">
+                        <option value="0"> Elige un Tema </option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="p-3 col-md-3 mt-3">
+            <div class="border rounded-3 shadow p-3 pt-0  row g-3">
+                <legend class="h5 text-muted mb-3 pb-2 border-bottom ">Informacion Extra</legend>
+                
+                <div class="col-md-12 mb-3">
+                    <button class="btn btn-danger w-100 fw-bold " data-bs-toggle="modal" data-bs-target="#ModalHorario" id="btn-horario"><i class="icon ion-md-time"></i>
+                        Horario</button>
+                </div>
+                
+                <div class="col-md-12 mb-4 ">
+                    <button class="btn btn-dark  w-100 fw-bold " data-bs-toggle="modal" data-bs-target="#ModalComentario" id="btnComentario"><i class="icon ion-md-chatbubbles"></i>
+                        Comentario</button>
+                </div>
+            </div>
+        </fieldset>
+            
+    </form>
+    
+</div>
+
+{% include "./Modal.comentario.html" %}
+{% include "./Modal.horario.html" %}
+
+{% include "./ScriptsNuevoUsuario.html" %}
+
+
+
+{% endblock %}
+

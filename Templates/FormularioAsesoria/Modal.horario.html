@@ -1,0 +1,87 @@
+<div class="modal" tabindex="-1" data-bs-keyboard="false" data-bs-backdrop="static"  id="ModalHorario">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Horario disponible</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6 class="">Escribe aqui el horario que tiene disponible el alumno para tomar la asesoria</h6>
+
+           <!-- Lunes -->
+          <div class="row p-2">
+            <div class="col-md-2 d-flex align-items-center ">
+              <div>
+                <input  type="checkbox" id="cbx-lunes">
+                <label for="">Lunes</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <textarea id="txt-lunes" class="w-100 form-control" style="resize: none;" disabled ></textarea>
+            </div>
+          </div>
+                         
+          <!-- Martes -->
+          <div class="row p-2">
+            <div class="col-md-2 d-flex align-items-center ">
+              <div>
+                <input  type="checkbox" id="cbx-martes">
+                <label for="">Martes</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <textarea disabled id="txt-martes" class="w-100 form-control" style="resize: none;"></textarea>
+            </div>
+          </div>
+                         
+          <!-- Miercoles -->
+          <div class="row p-2">
+            <div class="col-md-2 d-flex align-items-center ">
+              <div>
+                <input  type="checkbox" id="cbx-miercoles">
+                <label for="">Miercoles</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <textarea disabled id="txt-miercoles" class="w-100 form-control" style="resize: none;"></textarea>
+            </div>
+          </div>
+                    
+          <!-- Jueves -->
+          <div class="row p-2">
+            <div class="col-md-2 d-flex align-items-center ">
+              <div>
+                <input  type="checkbox" id="cbx-jueves">
+                <label for="">Jueves</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <textarea disabled id="txt-jueves" class="w-100 form-control" style="resize: none;"></textarea>
+            </div>
+          </div>
+                    
+          <!-- Viernes -->
+          <div class="row p-2">
+            <div class="col-md-2 d-flex align-items-center ">
+              <div>
+                <input  type="checkbox" id="cbx-viernes">
+                <label for="">Viernes</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <textarea disabled id="txt-viernes" class="w-100 form-control" style="resize: none;"></textarea>
+            </div>
+          </div>
+          
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btn-cancelar-horario">Cancelar</button>
+          <button type="button" class="btn btn-warning " id="btn-guardar-horario" data-bs-dismiss="modal">Guardar Horarios</button>
+        </div>
+      </div>
+    </div>
+  </div>

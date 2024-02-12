@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+.contenedor-global{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-informacion,
+.contenedor-imagen{
+    width: 50%;
+}
+
+/* .contenedor-imagen{
+    padding: 10px;
+} */
+
+.contenedor-imagen img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: left;
+}
+
+.logo{
+    width: 10%;
+    margin: 20px;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.ocultar{
+    display: none;
+    visibility: hidden;
+}

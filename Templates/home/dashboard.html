@@ -1,0 +1,32 @@
+{% extends "home.html" %} 
+
+{% block title %}COBE CU{% endblock title %}
+{% block content%}
+    <header class="container">
+        {% include "./Banner.bienvenida.html" %}
+    </header>
+
+    <section>
+        {% include "./Banner.estadisticas.html" %}
+    </section>
+
+    <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 my-3">
+                <!-- otras cosas -->
+            </div>
+
+            {% include "./Asesores.Disponibles.html" %}
+
+        </div>
+    </div>
+    </section>
+
+    {% include "./Modal.Buscar.html"%}
+    {% include "./Modal.Confirmar.html"%}
+    {% include "./Modal.NewAlumno.html"%}
+    {% include "./Scripts.html"%}
+
+
+{% endblock %}

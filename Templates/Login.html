@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/login/style.css' %}" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+    <title>Document</title>
+</head>
+<body class="contenedor-global">
+    <div class="contenedor-informacion">
+        <div class="logo">
+            
+            <img src="{%static 'img/login/unnamed.png'%}" alt="">
+        </div>
+        <div class="container p-4 text-center  ">
+            <h1>Bienvenido a Cobe CU</h1>
+            <h4 class="text-muted ">Inicia Sesión con tu cuenta</h4>
+            <form action="loginUsuario" method="POST" class="p-4 m-2  text-start ">{% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Usuario</label>
+                    <input type="text" name="username" class="form-control" id="usuarioInput" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Recuerda Nunca compartir tu correo o usuario con nadie.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="d-grid gap-2 mt-4 ">
+                    <button type="submit" class="btn btn-warning btn-lg">Entrar</button>
+                </div>
+            </form>
+
+            {% if error_message %}
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Usuario o Contraseña incorrecta!</h4>
+                <p>Usuario no encontrado</p>
+                <p>Debes de escribir tu nombre de usuario con el teclado no seleccionandolo</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="contenedor-imagen">
+        
+        <img src="{%static 'img/login/cu-portada.jpg'%}" alt="">
+    </div>
+
+
+    <script src="{% static '/bootstrap-5.0.2-dist/js/bootstrap.min.js' %}"></script>
+        
+</body>
+</html>

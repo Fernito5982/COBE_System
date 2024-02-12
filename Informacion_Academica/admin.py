@@ -1,0 +1,21 @@
+from django.contrib import admin
+from .models import ProgramaAcademico, Materia, Tema, Alumno, Personal, Rango
+# Register your models here.
+
+
+class AlumnoAdmin(admin.ModelAdmin):
+    list_display = ('Matricula', 'Nombre_Alumno', 'Carrera')
+    list_filter = ['Carrera']
+    search_fields = ['Matricula']
+
+
+class PersonalAdmin(admin.ModelAdmin):
+    list_display = ('Matricula')
+
+
+admin.site.register(ProgramaAcademico)
+admin.site.register(Materia)
+admin.site.register(Tema)
+admin.site.register(Rango)
+admin.site.register(Personal)
+admin.site.register(Alumno, AlumnoAdmin)
