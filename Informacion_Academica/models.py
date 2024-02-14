@@ -60,7 +60,7 @@ class AsesoriaAcademica(models.Model):
     Estatus = models.CharField(max_length=11)
 
     def __str__(self):
-        return self.id_Asesoria
+        return self.Matricula
 
 
 class Rango(models.Model):

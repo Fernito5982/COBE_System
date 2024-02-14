@@ -1,8 +1,13 @@
 :root{
     --offcanvas-width:230px;
     --topNavbarHeight: 53px;
-    --color-dark:#212529;
+    /* --color-dark:#212529; */
+    --color-dark: #b82168;
+    --txt-color: #f8c3cc;
+    --btn-color:#e63d5e;
+
 }
+
 
 .titlte-navbar{
     color: white;
@@ -31,6 +36,34 @@
   visibility: hidden;
   display: none;
 }
+
+.bg-valentin{
+  background-color: var(--color-dark);
+}
+
+.txt-valentin{
+  color: var(--txt-color);
+}
+
+.txt-valentin2{
+  color: var(--btn-color);
+}
+
+.btn-warning{
+  background-color: var(--btn-color) !important ;
+  color: var(--txt-color);
+  font-weight: bold;
+  outline: none;
+  border: none;
+}
+
+.btn-warning:hover{
+  color: white;
+  outline: none;
+  border: none;
+}
+
+
 
 /************************ Spinner *******************************************/
 .spinner {
