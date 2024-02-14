@@ -3,3 +3,4 @@
 *ps1
 datos
 __pycache__/
+*.pyc
