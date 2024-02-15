@@ -8,7 +8,7 @@ import json
 
 from Informacion_Academica.models import Alumno, ProgramaAcademico, Materia, AsesoriaAcademica
 
-# Create your views here.
+# Funciones Asesorias Academicas
 
 
 def Buscar_Matricula(request, matricula):
