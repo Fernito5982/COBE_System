@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
-from .models import AsesoriaAcademica
 import json
 
 
@@ -37,6 +36,23 @@ def Obtener_Carreras(request):
         info = {
             "message": "Success",
             "Carreras": carreras_serialized,
+        }
+
+    except:
+        info = {
+            "message": "Not Found"
+        }
+
+    return JsonResponse(info)
+
+
+def Obtener_Asesorias_Pendientes(request):
+    try:
+        asesorias = AsesoriaAcademica.objects.all()
+        asesorias_serializada = list(asesorias.values())
+        info = {
+            "message": "Success",
+            "Asesorias": asesorias_serializada,
         }
 
     except:

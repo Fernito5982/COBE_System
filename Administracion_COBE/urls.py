@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Administracion_COBE.views import Home, FormularioAsesoria, FormularioAsesoriasNuevosAlumnos, AlertaConfirmacion, HomeRecepcion, RegistroDiario, UsuarioInicioSesion, login_usuario, logout_usuario
-from Informacion_Academica.views import Buscar_Matricula, Obtener_Carreras, Obtener_Materias, Obtener_Temas, ObtenerAsesoria
+from Informacion_Academica.views import Buscar_Matricula, Obtener_Carreras, Obtener_Materias, Obtener_Temas, ObtenerAsesoria, Obtener_Asesorias_Pendientes
 from RecepcionCOBE.views import ObtenerServicios, ObtenerRegistroDiario
 
 urlpatterns = [
@@ -25,6 +25,7 @@ urlpatterns = [
     path('login', UsuarioInicioSesion, name='login'),
     path('loginUsuario', login_usuario),
     path('logout', logout_usuario),
+
 
     path('Asesorias', Home, name='Asesorias'),
     path('GenerarAsesoria', FormularioAsesoria),
@@ -35,7 +36,7 @@ urlpatterns = [
     path('Temas/<str:materia>', Obtener_Temas),
     path('Api/ObtenerAsesoria', ObtenerAsesoria),
     path('AsesoriaGenerada', AlertaConfirmacion),
-
+    path('ObtenerAsesoriasPendientes', Obtener_Asesorias_Pendientes),
 
     path('Recepcion', HomeRecepcion, name='Recepcion'),
     path('RegistroDiario', RegistroDiario),
