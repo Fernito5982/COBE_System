@@ -36,6 +36,12 @@ def RegistroDiario(request):
     return render(request, 'home_recepcion/formulario.registroDiario.html')
 
 
+@login_required
+def AgendarAsesoria(request):
+    return render(request, 'AgendarCita/main_panel.html')
+
+
+# Funciones de Login
 def UsuarioInicioSesion(request):
     return render(request, 'Login.html')
 
