@@ -85,6 +85,7 @@ DATABASES = {
         'PASSWORD': '',  # Reemplaza con la contraseña de MySQL
         'HOST': 'localhost',         # Si la base de datos está en local, déjalo como 'localhost'
         'PORT': '3306',              # Puerto de MySQL, por defecto es '3306'
+
     }
 }
 
