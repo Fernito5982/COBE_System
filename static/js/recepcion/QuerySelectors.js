@@ -18,3 +18,7 @@ export const $textoInvalid = document.querySelector('#infoWrong');
 
 export const $DatosIncorrectos = document.querySelector('#DatosIncorrectos');
 export const $DatosCorrectos = document.querySelector('#DatosCorrectos');
+
+export const $BtnTicketError = document.querySelector('#but-tic');
+
+export const $ModalTicket = document.querySelector('#ModalTicketError');
