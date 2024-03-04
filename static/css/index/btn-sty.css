@@ -1,0 +1,15 @@
+#but-two-fu{
+    height: 45px; 
+    width: 45px; 
+    border-radius: 75px; 
+    z-index:calc(300);
+    background-color: black;
+    transition: all 1.2s;
+    color: #fff;
+}
+
+#but-two-fu:hover{
+    background-color: #fff;
+    color: black;
+    transition: all 1.2s;
+}

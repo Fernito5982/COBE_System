@@ -20,6 +20,9 @@
       rel="stylesheet"
     />
 
+    <!--Stilos de los botones de notas y ticket-->
+    <link rel="stylesheet" href="../static/css/index/btn-sty.css">
+
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
@@ -40,6 +43,13 @@
 
         <a class="navbar-brand" href="#">COBE CU</a>
         <!--Generar Dinamicamente-->
+
+        <button type="button" id="but-two-fu" class="position-absolute top-15 start-10" onclick="but_dis()">+</button>
+        <!--Boton para ticket y notas--->
+        
+        <button type="button" id="but-tic" class="position-absolute top-15 start-10" style="height: 35px; width: 35px; border-radius: 75px; z-index:calc(200);"> + </button>
+        <button type="button" id="but-not" class="position-absolute top-15 start-10" style="height: 35px; width: 35px; border-radius: 75px;"> + </button>
+        <!--Botones correspondoentes-->
 
         <button
           class="navbar-toggler"
@@ -181,6 +191,7 @@
 
       <!-- JAVASCRIPTS -->
       <script src="{% static '/bootstrap-5.0.2-dist/js/bootstrap.min.js' %}"></script>
+      <script src="../static/js/recepcion/btn-styl.js"></script>
         
     <main>
       {% block content %} 
