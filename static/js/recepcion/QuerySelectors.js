@@ -22,3 +22,7 @@ export const $DatosCorrectos = document.querySelector('#DatosCorrectos');
 export const $BtnTicketError = document.querySelector('#but-tic');
 
 export const $ModalTicket = document.querySelector('#ModalTicketError');
+
+export const $AsuntoTicket = document.querySelector('#SlectorAsunto');
+export const $DescricpionTicket = document.querySelector('#DescripTicket');
+export const $BotonTicket = document.querySelector('#SumbitTicket');

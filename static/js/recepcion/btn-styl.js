@@ -5,7 +5,7 @@ var NroDes = 1;
 function but_dis(){
     var but = document.getElementById("but-tic");
     if(NroDes == 1){
-        var pos = 14;
+        var pos = 15;
         clearInterval(id);
         id = setInterval(frame, 1)
         function frame(){
