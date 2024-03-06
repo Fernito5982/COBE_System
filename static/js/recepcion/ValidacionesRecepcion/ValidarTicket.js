@@ -25,7 +25,8 @@ $BotonTicket.addEventListener('click', e=>{
     if($DescricpionTicket.value != '' && $AsuntoTicket.value != 'Asuntos'){
         const Tic = CopitTicket();
         ConvertirJSON(Tic);
-        
+        $ModalTicket.hide();
+
     }
 })
 
