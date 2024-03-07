@@ -1,8 +1,7 @@
 import { formatearFecha } from "../Reloj.js";
-import { $BuscarMatricula, $ConfirmarMatricula } from "./Modales.js";
+import { $BuscarMatricula, $ConfirmarMatricula, $MandarInfoExtra } from "./Modales.js";
 import { ObtenerMatricula } from "./ObtenerMatricula.js";
-import { $DatosCorrectos, $DatosIncorrectos, $btnMatricula, $btnRegistroDiario, $inputMatricula } from "./QuerySelectors.js";
-
+import { $DatosCorrectos, $DatosIncorrectos, $btnMatricula, $btnRegistroDiario, $inputMatricula, $BtnVerMas } from "./QuerySelectors.js";
 
 const fecha = document.querySelector('#Fecha')
   
@@ -43,3 +42,9 @@ $DatosIncorrectos.addEventListener('click', e=>{
     $BuscarMatricula.show();
    
 });
+
+
+$BtnVerMas.addEventListener('click', e=>{
+    e.preventDefault();
+    $MandarInfoExtra.show();
+})

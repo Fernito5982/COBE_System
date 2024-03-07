@@ -23,6 +23,15 @@ export const $BtnTicketError = document.querySelector('#but-tic');
 
 export const $ModalTicket = document.querySelector('#ModalTicketError');
 
-export const $AsuntoTicket = document.querySelector('#SlectorAsunto');
-export const $DescricpionTicket = document.querySelector('#DescripTicket');
-export const $BotonTicket = document.querySelector('#SumbitTicket');
+export const $NameList = document.querySelector('#Name-List');
+export const $TimeList = document.querySelector('#Timer-Asist');
+export const $IMGicon = document.querySelector('#img-icon');
+export const $BtnVerMas = document.querySelector('#Btn-verM-info');
+
+export const $ModalIE = document.querySelector('#ModalInfoExtra');
+
+
+// export const $AsuntoTicket = document.querySelector('#SlectorAsunto');
+// export const $DescricpionTicket = document.querySelector('#DescripTicket');
+// export const $BotonTicket = document.querySelector('#SumbitTicket');
+

@@ -8,12 +8,24 @@
     {% include "./Banner.bienvenida.html" %}
 </header>
 
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 my-3">
+                <!-- otras cosas -->
+            </div>
 
+            {% include "./ListaAsistenciaCOBE.html" %}
+
+        </div>
+    </div>
+    </section>
 
 
 
 {% include "../home/Modal.Buscar.html" %}
 {% include "../home/Modal.Confirmar.html" %}
 {% include "../home/Modal.Ticket.html" %}
+{% include "../home/Modal.InfoExtra.html" %}
 {% include "./Scripts.html" %}
 {% endblock %}
