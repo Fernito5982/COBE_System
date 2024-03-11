@@ -1,34 +1,73 @@
 
 var id = null;
+var tr = null;
 var NroDes = 1;
 
 function but_dis(){
-    var but = document.getElementById("but-tic");
+    let but = document.getElementById("but-tic");
+    let not = document.getElementById("but-not");
+    let desc = document.getElementById('but-two-fu');
     if(NroDes == 1){
-        var pos = 15;
+        desc.disabled = true;
+        but.disabled = true;
+        not.disabled = true;
+        var pos1 = 15;
+        var pos2 = 15;
         clearInterval(id);
-        id = setInterval(frame, 1)
-        function frame(){
-            if(pos == 70){
+        clearInterval(tr);
+        id = setInterval(frame1, 1)
+        tr = setInterval(frame2, 1)
+        function frame1(){
+            if(pos1 == 75){
                 clearInterval(id);
-                NroDes = 0;
             } else {
-                pos++;
-                but.style.left = pos + 'px';
+                pos1++;
+                but.style.left = pos1 + 'px';
+            }
+        }
+        function frame2(){
+            if(pos2 == 115){
+                clearInterval(tr);
+                NroDes = 0;
+                desc.disabled = false;
+                but.disabled = false;
+                not.disabled = false;
+            } else {
+                pos2++;
+                not.style.left = pos2 + 'px';
             }
         }
     }else{
-        var pos = 70;
-        clearInterval(id);
-        id = setInterval(frame2, 1)
-        function frame2(){
-            if(pos < 14){
-                clearInterval(id);
-                NroDes = 1;
-            } else {
-                pos--;
-                but.style.left = pos + 'px';
+
+            desc.disabled = true;
+            but.disabled = true;
+            not.disabled = true;
+            var pos1 = 75;
+            var pos2 = 115;
+            clearInterval(id);
+            clearInterval(tr);
+            id = setInterval(frame3, 1)
+            tr = setInterval(frame4, 1)
+            function frame3(){
+                if(pos1 < 14){
+                    clearInterval(id);
+                } else {
+                    pos1--;
+                    but.style.left = pos1 + 'px';
+                }
             }
-        }
+            function frame4(){
+                if(pos2 < 14){
+                    clearInterval(tr);
+                    NroDes = 1;
+                    desc.disabled = false;
+                    but.disabled = false;
+                    not.disabled = false;
+                } else {
+                    pos2--;
+                    not.style.left = pos2 + 'px';
+                }
+            }
+        
     }
 }

@@ -15,7 +15,8 @@ async function ConfirmarMatricula(matricula) {
 
         const respuesta = await fetch(`./buscar/${matricula}`);
         const resultado  = await respuesta.json();
-
+        
+        console.log(resultado.message);
         if (resultado.message === 'Success'){ // Usuario Existe
             $ConfirmarMatricula.show()
             $inputMatricula.value = ''

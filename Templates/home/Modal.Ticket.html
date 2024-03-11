@@ -4,14 +4,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Ticket de Errores</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" id="btnCancelTicket" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="mb-3">
           <form class="row g-3 needs-validation" novalidate>
             <div class="form-floating">
               <select class="form-select" id="SlectorAsunto" aria-label="Floating label select example">
-                <option selected>Asuntos</option>
+                <option selected value="">Asuntos</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
@@ -31,5 +31,3 @@
     </div>
   </div>
 </div>
-
-<script src="../../static/js/recepcion/ValidacionesRecepcion/ValidarTicket.js" ></script>

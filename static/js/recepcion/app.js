@@ -1,6 +1,7 @@
 import { formatearFecha } from "../Reloj.js";
 import { $BuscarMatricula, $ConfirmarMatricula, $MandarInfoExtra } from "./Modales.js";
 import { ObtenerMatricula } from "./ObtenerMatricula.js";
+import { Validacion } from './ticket.val.mol.js';
 import { $DatosCorrectos, $DatosIncorrectos, $btnMatricula, $btnRegistroDiario, $inputMatricula, $BtnVerMas } from "./QuerySelectors.js";
 
 const fecha = document.querySelector('#Fecha')
@@ -17,7 +18,7 @@ $btnRegistroDiario.addEventListener('click', e =>{
 
 $btnMatricula.addEventListener('click', e =>{
     e.preventDefault();
-
+    Validacion($inputMatricula);
     if($inputMatricula.value.length === 6){
         $BuscarMatricula.hide();
         $ConfirmarMatricula.show();

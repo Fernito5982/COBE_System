@@ -31,7 +31,8 @@ export const $BtnVerMas = document.querySelector('#Btn-verM-info');
 export const $ModalIE = document.querySelector('#ModalInfoExtra');
 
 
-// export const $AsuntoTicket = document.querySelector('#SlectorAsunto');
-// export const $DescricpionTicket = document.querySelector('#DescripTicket');
-// export const $BotonTicket = document.querySelector('#SumbitTicket');
+export const $AsuntoTicket = document.querySelector('#SlectorAsunto');
+export const $DescricpionTicket = document.querySelector('#DescripTicket');
+export const $BotonTicket = document.querySelector('#SumbitTicket');
+export const $BtnCancel = document.querySelector('#btnCancelTicket');
 

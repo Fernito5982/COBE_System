@@ -44,11 +44,11 @@
         <a class="navbar-brand" href="#">COBE CU</a>
         <!--Generar Dinamicamente-->
 
-        <button type="button" id="but-two-fu" class="position-absolute top-15 start-10" onclick="but_dis()">+</button>
+        <button type="button" id="but-two-fu" class="position-absolute top-15 start-10 btn btn-dark" onclick="but_dis()"><i class="icon ion-md-cog"></i></button>
         <!--Boton para ticket y notas--->
         
-        <button type="button" id="but-tic" class="position-absolute top-15 start-10" style="height: 35px; width: 35px; border-radius: 75px; z-index:calc(200);"> + </button>
-        <button type="button" id="but-not" class="position-absolute top-15 start-10" style="height: 35px; width: 35px; border-radius: 75px;"> + </button>
+        <button type="button" id="but-tic" class="position-absolute top-15 start-10 btn btn-danger btn-sm"><i class="icon ion-md-warning"></i></button>
+        <button type="button" id="but-not" class="position-absolute top-15 start-10 btn btn-warning btn-sm"><i class="icon ion-md-list-box"></i></button>
         <!--Botones correspondoentes-->
 
         <button
@@ -192,9 +192,9 @@
       <!-- JAVASCRIPTS -->
       <script src="{% static '/bootstrap-5.0.2-dist/js/bootstrap.min.js' %}"></script>
       <script src="../static/js/recepcion/btn-styl.js"></script>
-      <script src="../static/js/recepcion/btn-mol-tic.js" type="module"></script>
+      <script src="../static/js/recepcion/ticket.val.mol.js" type="module"></script>
         
-      
+
     <main>
       {% block content %} 
       
