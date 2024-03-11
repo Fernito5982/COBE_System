@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 from Informacion_Academica.models import Personal
+from Informacion_Academica.views import ObtenerInformacionAsesores
 
 
 @login_required
@@ -34,6 +35,18 @@ def HomeRecepcion(request):
 @login_required
 def RegistroDiario(request):
     return render(request, 'home_recepcion/formulario.registroDiario.html')
+
+
+@login_required
+def AgendarAsesoria(request):
+    return render(request, 'AgendarCita/main_panel.html')
+
+
+@login_required
+def Horarios(request):
+    return render(request, 'HorariosAsesores/horarios.html')
+
+# Funciones de Login
 
 
 def UsuarioInicioSesion(request):

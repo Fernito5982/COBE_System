@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+<!DOCTYPE html><!-- Angy Was HERE!-->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,6 +19,9 @@
       href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
       rel="stylesheet"
     />
+
+    <!--Stilos de los botones de notas y ticket-->
+    <link rel="stylesheet" href="../static/css/index/btn-sty.css">
 
     <title>{% block title %}{% endblock %}</title>
   </head>
@@ -40,6 +43,13 @@
 
         <a class="navbar-brand" href="#">COBE CU</a>
         <!--Generar Dinamicamente-->
+
+        <button type="button" id="but-two-fu" class="position-absolute top-15 start-10 btn btn-dark" onclick="but_dis()"><i class="icon ion-md-cog"></i></button>
+        <!--Boton para ticket y notas--->
+        
+        <button type="button" id="but-tic" class="position-absolute top-15 start-10 btn btn-danger btn-sm"><i class="icon ion-md-warning"></i></button>
+        <button type="button" id="but-not" class="position-absolute top-15 start-10 btn btn-warning btn-sm"><i class="icon ion-md-list-box"></i></button>
+        <!--Botones correspondoentes-->
 
         <button
           class="navbar-toggler"
@@ -130,13 +140,13 @@
               </div>
             </li>
             <li class="fw-normal">
-              <a href="#" class="nav-link px-3 active">
+              <a href="HorariosAsesores" class="nav-link px-3 active">
                 <span class="me-2"><i class="icon ion-md-alarm"></i> </span>
-                <span>Asistencia</span>
+                <span>Horarios</span>
               </a>
             </li>
             <li class="fw-normal">
-              <a href="#" class="nav-link px-3 active">
+              <a href="AgendarAsesoria  " class="nav-link px-3 active">
                 <span class="me-2"><i class="icon ion-md-calendar"></i> </span>
                 <span>Agendar Asesorias</span>
               </a>
@@ -181,7 +191,10 @@
 
       <!-- JAVASCRIPTS -->
       <script src="{% static '/bootstrap-5.0.2-dist/js/bootstrap.min.js' %}"></script>
+      <script src="../static/js/recepcion/btn-styl.js"></script>
+      <script src="../static/js/recepcion/ticket.val.mol.js" type="module"></script>
         
+
     <main>
       {% block content %} 
       

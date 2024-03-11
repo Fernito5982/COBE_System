@@ -60,7 +60,7 @@ class AsesoriaAcademica(models.Model):
     Estatus = models.CharField(max_length=11)
 
     def __str__(self):
-        return self.id_Asesoria
+        return self.Matricula
 
 
 class Rango(models.Model):
@@ -75,3 +75,10 @@ class Personal(models.Model):
         upload_to='profile_pictures/', blank=True, null=True)
     Rol = models.ForeignKey(Rango, on_delete=models.CASCADE)
     Usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class AsesorAcademico(models.Model):
+    id_Asesor = models.BigAutoField(primary_key=True)
+    Personal = models.ForeignKey(Personal, on_delete=models.CASCADE)
+    Horarios = models.TextField()
+    Materias = models.TextField()

@@ -1,0 +1,36 @@
+#but-two-fu{
+    height: 40px; 
+    width: 45px; 
+    z-index:calc(300);
+    transition: all 0.5s;
+    color: #fff;
+}
+
+#but-two-fu:hover{
+    background-color: #fff;
+    color: black;
+    transition: all 1s;
+}
+
+
+#but-tic:hover{
+    background-color: #fff;
+    color: black;
+    transition: all 1s;
+}
+
+#but-not:hover{
+    background-color: #fff;
+    color: black;
+    transition: all 1s;
+}
+
+#but-tic{
+    transition: all 0.3s;
+    z-index:calc(200); 
+}
+
+#but-not{
+    transition: all 0.6s;
+    z-index: calc(100);
+}
