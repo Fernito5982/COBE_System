@@ -2,11 +2,10 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
-from .models import AsesoriaAcademica
 import json
 
 
-from Informacion_Academica.models import Alumno, ProgramaAcademico, Materia, AsesoriaAcademica
+from Informacion_Academica.models import Alumno, ProgramaAcademico, Materia, AsesoriaAcademica, Personal, AsesorAcademico
 
 # Funciones Asesorias Academicas
 
@@ -37,6 +36,23 @@ def Obtener_Carreras(request):
         info = {
             "message": "Success",
             "Carreras": carreras_serialized,
+        }
+
+    except:
+        info = {
+            "message": "Not Found"
+        }
+
+    return JsonResponse(info)
+
+
+def Obtener_Asesorias_Pendientes(request):
+    try:
+        asesorias = AsesoriaAcademica.objects.all()
+        asesorias_serializada = list(asesorias.values())
+        info = {
+            "message": "Success",
+            "Asesorias": asesorias_serializada,
         }
 
     except:
@@ -126,3 +142,54 @@ def AlmacenarAsesoriaDB(Asesoria):
     )
 
     asesoriaDB.save()
+
+
+def ObtenerInformacionAsesores(request):
+
+    # Lista de diccionarios de asesores
+    asesores_lista = []
+
+    try:
+        # Obtener listado asesores
+        asesores = AsesorAcademico.objects.all()
+
+        # Recorremos el listado de asesores
+        for asesor in asesores:
+            # Informacion Asesor
+            info_asesor = {
+                "Nombre": "",
+                "Imagen": "",
+                "Materias": "",
+                "Horarios": "",
+                "Carrera": ""
+            }
+
+            # Rellanamos el diccionario
+            info_asesor["Materias"] = asesor.Materias
+            info_asesor["Horarios"] = asesor.Horarios
+            info_asesor["Imagen"] = asesor.Personal.Imagen.url
+
+            # Buscamos la informacion faltante en otras tablas
+            info = Alumno.objects.get(
+                Matricula=asesor.Personal.Matricula)
+
+            nombre = info.Nombre_Alumno
+            carrera = info.Carrera.Nombre
+
+            # Completar informacion
+            info_asesor["Nombre"] = nombre
+            info_asesor["Carrera"] = carrera
+
+            asesores_lista.append(info_asesor)
+
+        info = {
+            "message": "Success",
+            "asesores_informacion": asesores_lista,
+        }
+
+    except:
+        info = {
+            "message": "Not Found",
+        }
+
+    return JsonResponse(info)

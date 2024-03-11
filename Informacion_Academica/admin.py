@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ProgramaAcademico, Materia, Tema, Alumno, Personal, Rango, AsesoriaAcademica
+from .models import ProgramaAcademico, Materia, Tema, Alumno, Personal, Rango, AsesoriaAcademica, AsesorAcademico
 # Register your models here.
 
 
@@ -24,3 +24,4 @@ admin.site.register(Rango)
 admin.site.register(Personal)
 admin.site.register(Alumno, AlumnoAdmin)
 admin.site.register(AsesoriaAcademica, AsesoriasAdmin)
+admin.site.register(AsesorAcademico)

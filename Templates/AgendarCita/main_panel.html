@@ -1,0 +1,39 @@
+{% extends "home.html" %}
+
+{% block title %} Agendar Asesoria {% endblock title %}
+
+{% block content %}
+<header class="container ">
+    <div class="container">
+        <h1>Asesorias por Agendar</h1>
+        <hr class="mt-4 ">
+        <div class="container">
+            <table class="table table-hover table-bordered p-4">
+                <thead>
+                    <tr class="table-dark">
+                      <th scope="col">Matricula</th>
+                      <th scope="col">Materia</th>
+                      <th scope="col">Tema</th>
+                      <th scope="col">Horario</th>
+                      <th scope="col">Estatus</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><a href="#">201316</a></td>
+                      <td>CALCULO I</td>
+                      <td>Derivadas de Primer Orden</td>
+                      <td>Lunes 8am - 9am Miercoles 8am - 9am Viernes 8am - 9am</td>
+                      <td class="table-warning">Por Agendar</td>
+                    </tr>
+                    
+                  </tbody>
+              </table>
+        </div>
+        
+    </div>
+</header>
+
+
+{% include "./Scripts.html" %}
+{% endblock %}
