@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Administracion_COBE.views import (Home, FormularioAsesoria, 
-FormularioAsesoriasNuevosAlumnos, AlertaConfirmacion, HomeRecepcion, RegistroDiario, UsuarioInicioSesion, login_usuario, logout_usuario,
+FormularioAsesoriasNuevosAlumnos, AlertaConfirmacion, HomeRecepcion, RegistroDiario, 
+UsuarioInicioSesion, login_usuario, logout_usuario,
 AgendarAsesoria)
 
 from Informacion_Academica.views import (Buscar_Matricula, Obtener_Carreras, 
@@ -42,6 +43,8 @@ urlpatterns = [
     path('AsesoriaGenerada', AlertaConfirmacion),
     path('ObtenerAsesoriasPendientes', Obtener_Asesorias_Pendientes),
     path('AgendarAsesoria', AgendarAsesoria),
+    path('HorariosAsesores', Horarios),
+    path('Api/Horarios', ObtenerInformacionAsesores),
 
     path('Recepcion', HomeRecepcion, name='Recepcion'),
     path('RegistroDiario', RegistroDiario),
