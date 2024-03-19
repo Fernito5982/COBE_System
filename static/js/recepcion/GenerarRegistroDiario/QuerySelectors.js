@@ -5,5 +5,4 @@ export const $MatriculaInput = document.querySelector('#Matricula');
 export const $CarreraInput = document.querySelector('#carrera');
 export const $SexoInput = document.querySelector('#Sexo');
 export const $ServicioInput = document.querySelector('#Servicio');
-
 export const $BtnEnviarRegistro = document.querySelector('#EnviarRegistro');

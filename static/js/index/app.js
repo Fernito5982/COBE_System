@@ -1,10 +1,12 @@
 import { formatearFecha } from '../Reloj.js';
-import { MostrarModalBusqueda, MostrarConfirmacionBusqueda,EsconderConfirmacionBusqueda,EsconderModalBusqueda, ObtenerMatricula, EsconderNewAlmno } from './BusquedaMatricula/Modal.ObtenerMatricula.js';
+import { MostrarModalBusqueda, MostrarConfirmacionBusqueda,EsconderConfirmacionBusqueda,
+    EsconderModalBusqueda, ObtenerMatricula, EsconderNewAlmno
+    } from './BusquedaMatricula/Modal.ObtenerMatricula.js';
 
+import handleScreenChange from './MediaQuerys/MediaQuerry.Navbar.js';
 
-import handleScreenChange from './MediaQuerys/MediaQuerry.Navbar.js'
-
-import { $BtnGenerarAsesoria, $btnMatricula, $DatosCorrectos, $DatosIncorrectos,$BtnRegistrarAlumno,$BtnVolverIntentar, $inputMatricula, $textoInvalid} from './QuerySelectors.js';
+import { $BtnGenerarAsesoria, $btnMatricula, $DatosCorrectos, $DatosIncorrectos,
+    $BtnRegistrarAlumno,$BtnVolverIntentar, $inputMatricula, $textoInvalid} from './QuerySelectors.js';
 
 // Definir el media query para 992px
 const mediaQuery = window.matchMedia('(max-width: 992px)');

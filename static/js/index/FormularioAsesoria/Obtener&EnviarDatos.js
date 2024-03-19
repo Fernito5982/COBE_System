@@ -7,7 +7,6 @@ export function ObtenerDatos() {
     const isValid = ValidarDatosFormulario();
     
     if (isValid){
-
         $ModalConfirmacionAsesoria.show();
         ObtenerDatosAsesoria();
     } 
@@ -150,5 +149,5 @@ function GenerarConfirmacionModal(Asesoria) {
     `;
 
     $infoAsesoria.innerHTML = bodyAsesoria;
-   AlmacenarAsesoriaLocalStorage(Asesoria);
+    AlmacenarAsesoriaLocalStorage(Asesoria);
 }

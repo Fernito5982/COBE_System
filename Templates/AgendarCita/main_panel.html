@@ -18,7 +18,7 @@
                       <th scope="col">Estatus</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="tbAsesorias">
                     <tr>
                       <td><a href="#">201316</a></td>
                       <td>CALCULO I</td>
@@ -34,6 +34,61 @@
     </div>
 </header>
 
+<!-- The Modal Alumnos -->
+<div class="modal" id="ModalAsesoriasAlumnos">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Asignar Asesoria</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <label class="form-label"><i class="icon ion-md-person"></i>Nombre Alumno</label>
+              <input type="text" class="form-control" placeholder="John Doe" id="NombreAlumnoInput" aria-describedby="emailHelp" disabled>
+            </div>
+            <div class="col-md-6 mt-2">
+              <label class="form-label"><i class="icon ion-md-mail"></i>Correo Institucional</label>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="al@@@@@@" id="EmailInput" aria-describedby="basic-addon2" disabled>
+                <span class="input-group-text" id="basic-addon2">@alumnos.uacj.mx</span>
+              </div> 
+          </div>
+          <div class="row">
+            <div class="col">
+              <label class="form-label"><i class="icon ion-md-school"></i>Programa Academico</label>
+              <input type="text" class="form-control" placeholder="Ing. Mecatronica" id="CarreraInput" disabled>
+            </div>
+            <div class="col">
+              <label class="form-label">Asignar Asesor</label>
+              <select class="form-select" id="InputAsginarAsesor">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Asignar Asesor</button>
+        <div class="col-auto">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 {% include "./Scripts.html" %}
 {% endblock %}

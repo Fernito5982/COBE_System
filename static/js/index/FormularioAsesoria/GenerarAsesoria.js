@@ -1,5 +1,9 @@
 // Imports
-import {$BtnComentario, $BtnGuardarComentario, $CarreraInput,$CorreoInput, $MateriaInput, $MatriculaInput, $NombreInput, $TemaInput, $ComentarioTexto, $BtnHorario, $cbxLunes, $txtLunes, $cbxMartes, $cbxMiercoles, $cbxJueves, $cbxViernes, $txtMartes, $txtMiercoles, $txtViernes, $txtJueves, $EnviarAsesoria, $TelefonoInput, $SemestreInput, $NumMateriasInput, $ReprobadaInput, $BtnAsesoriaGenerar} from "./QuerySelectos.js"
+import {$BtnComentario, $BtnGuardarComentario, $CarreraInput,$CorreoInput, 
+    $MateriaInput, $MatriculaInput, $NombreInput, $TemaInput, $ComentarioTexto, 
+    $BtnHorario, $cbxLunes, $txtLunes, $cbxMartes, $cbxMiercoles, $cbxJueves, $cbxViernes, 
+    $txtMartes, $txtMiercoles, $txtViernes, $txtJueves, $EnviarAsesoria, $TelefonoInput, 
+    $SemestreInput, $NumMateriasInput, $ReprobadaInput, $BtnAsesoriaGenerar} from "./QuerySelectos.js"
 
 import { ObtenerLocalStorages } from "./AlmacenarInfoAlumno.js";
 import { ObtenerCarreras } from "./CargarCarreras.js"
@@ -12,7 +16,7 @@ import { CorrectInput } from "./ValidarDatosAsesoria.js";
 
 // Main()
 
-document.addEventListener("DOMContentLoaded", async() =>{
+document.addEventListener("DOMContentLoaded", async() => {
 
     // Cargamos los Options 
     await ObtenerCarreras()

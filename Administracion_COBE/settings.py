@@ -80,15 +80,29 @@ WSGI_APPLICATION = 'Administracion_COBE.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'administracion_COBE',  # Reemplaza con el nombre de tu base de datos
+        'NAME': 'administracion_cobe',  # Reemplaza con el nombre de tu base de datos
         'USER': 'root',     # Reemplaza con el nombre de usuario de MySQL
-        'PASSWORD': '',  # Reemplaza con la contraseña de MySQL
+        'PASSWORD': 'rnnnryepiummfc31',  # Reemplaza con la contraseña de MySQL
         'HOST': 'localhost',         # Si la base de datos está en local, déjalo como 'localhost'
         'PORT': '3306',              # Puerto de MySQL, por defecto es '3306'
 
     }
 }
 
+# # Database
+# # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'administracion_COBE',  # Reemplaza con el nombre de tu base de datos
+#         'USER': 'root',     # Reemplaza con el nombre de usuario de MySQL
+#         'PASSWORD': '',  # Reemplaza con la contraseña de MySQL
+#         'HOST': 'localhost',         # Si la base de datos está en local, déjalo como 'localhost'
+#         'PORT': '3306',              # Puerto de MySQL, por defecto es '3306'
+
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

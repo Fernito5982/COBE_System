@@ -9,7 +9,6 @@ from Informacion_Academica.models import Personal
 def Home(request):
     return render(request, 'home/dashboard.html')
 
-
 @login_required
 def FormularioAsesoria(request):
     return render(request, 'FormularioAsesoria/formulario.asesoria.html')
