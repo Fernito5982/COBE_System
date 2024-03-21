@@ -191,9 +191,12 @@
 
       <!-- JAVASCRIPTS -->
       <script src="{% static '/bootstrap-5.0.2-dist/js/bootstrap.min.js' %}"></script>
-      <script src="../static/js/recepcion/btn-styl.js"></script>
-      <script src="../static/js/recepcion/ticket.val.mol.js" type="module"></script>
-        
+
+      <!--Ocultar boton, dependeindo de la ventana-->
+      <script src="../static/js/recepcion/btnNone.js"></script>
+      
+      <!--Modal Ticket-->
+      {% include "./home/Modal.Ticket.html" %}
 
     <main>
       {% block content %} 

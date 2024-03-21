@@ -7,3 +7,8 @@ export const $SexoInput = document.querySelector('#Sexo');
 export const $ServicioInput = document.querySelector('#Servicio');
 
 export const $BtnEnviarRegistro = document.querySelector('#EnviarRegistro');
+
+export const $ModalVerificado = document.querySelector('#VerficarDatos');
+
+export const $BodyModalRegistoCom = document.querySelector('#ModalComRegBody');
+export const $BtnSonCorrectos = document.querySelector('#RegistroDiarioGenerado');

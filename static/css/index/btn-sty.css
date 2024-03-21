@@ -4,6 +4,7 @@
     z-index:calc(300);
     transition: all 0.5s;
     color: #fff;
+    display: none;
 }
 
 #but-two-fu:hover{
@@ -28,9 +29,11 @@
 #but-tic{
     transition: all 0.3s;
     z-index:calc(200); 
+    display: none;
 }
 
 #but-not{
     transition: all 0.6s;
     z-index: calc(100);
+    display: none;
 }

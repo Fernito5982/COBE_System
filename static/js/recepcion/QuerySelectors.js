@@ -20,6 +20,7 @@ export const $DatosIncorrectos = document.querySelector('#DatosIncorrectos');
 export const $DatosCorrectos = document.querySelector('#DatosCorrectos');
 
 export const $BtnTicketError = document.querySelector('#but-tic');
+export const $BtnNote = document.querySelector('#but-not');
 
 export const $ModalTicket = document.querySelector('#ModalTicketError');
 
@@ -35,4 +36,6 @@ export const $AsuntoTicket = document.querySelector('#SlectorAsunto');
 export const $DescricpionTicket = document.querySelector('#DescripTicket');
 export const $BotonTicket = document.querySelector('#SumbitTicket');
 export const $BtnCancel = document.querySelector('#btnCancelTicket');
+
+export const $BtnTwoTicAndNote = document.querySelector('#but-two-fu');
 

@@ -1,8 +1,9 @@
 import { formatearFecha } from "../Reloj.js";
-import { $BuscarMatricula, $ConfirmarMatricula, $MandarInfoExtra } from "./Modales.js";
+import { $BuscarMatricula, $ConfirmarMatricula } from "./Modales.js";
+import { $MandarInfoExtra } from "./Modal.Info.js";
 import { ObtenerMatricula } from "./ObtenerMatricula.js";
 import { Validacion } from './ticket.val.mol.js';
-import { $DatosCorrectos, $DatosIncorrectos, $btnMatricula, $btnRegistroDiario, $inputMatricula, $BtnVerMas } from "./QuerySelectors.js";
+import { $DatosCorrectos, $DatosIncorrectos, $btnMatricula, $btnRegistroDiario, $inputMatricula, $BtnVerMas, $BtnTwoTicAndNote } from "./QuerySelectors.js";
 
 const fecha = document.querySelector('#Fecha')
   
