@@ -39,3 +39,28 @@ export const $BtnCancel = document.querySelector('#btnCancelTicket');
 
 export const $BtnTwoTicAndNote = document.querySelector('#but-two-fu');
 
+export const $NotasGenerar = document.querySelector('#ModalGenerarNota');
+
+export const $BtnGenerarNot = document.querySelector('#GenerarNota');
+export const $DescripNotas = document.querySelector('#DescripNots');
+export const $NivelNotas = document.querySelector('#SlectorNivelImport');
+export const $BtnCancelNot = document.querySelector('#btnCancelNots');
+
+export const $HtmlNotasImport = document.querySelector('#NotasImportantes');
+export const $HtmlNotasUrgen = document.querySelector('#NotasUrgentes');
+export const $HtmlNotasRec = document.querySelector('#NotasRecado');
+
+export const $htmlConNot = document.querySelector('#PosNotsCom');
+
+export const $ModalBorrar = document.querySelector('#ModalBorrarNota');
+
+export const $btnComfBorrar = document.querySelector('#borrarNota');
+
+export const $ModalEdit = document.querySelector('#ModalEditarNota');
+
+export const $NivelEdit = document.querySelector('#SlectorNivelImportEdit');
+export const $DescripcionEdit = document.querySelector('#DescripNotsEdit');
+export const $btnEditar = document.querySelector('#EditarNota');
+export const $Titulo = document.querySelector('#NotaTitulo');
+export const $TituloEdit = document.querySelector('#NotaTituloEdit');
+

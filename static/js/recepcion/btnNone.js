@@ -7,13 +7,13 @@ window.addEventListener('load', e=>{
     e.preventDefault();
     
     if(window.location.pathname === '/Recepcion'){
-        btnTwo.style.display = 'flex';
-        btnTic.style.display = 'flex';
-        btnNot.style.display = 'flex';
+        btnTwo.style.display = 'block';
+        btnTic.style.display = 'block';
+        btnNot.style.display = 'block';
     }else{
         if(window.location.pathname === '/Asesorias'){
-            btnTwo.style.display = 'flex';
-            btnTic.style.display = 'flex';
+            btnTwo.style.display = 'block';
+            btnTic.style.display = 'block';
         }
     }
 

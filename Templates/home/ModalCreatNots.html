@@ -1,0 +1,46 @@
+
+<div class="modal fade" id="ModalGenerarNota" data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Generar una Nota</h5>
+          <button type="button" class="btn-close" id="btnCancelNots" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="mb-3">
+              <div class="form-floating">
+                <select class="form-select" id="SlectorNivelImport" aria-label="Floating label select example">
+                  <option selected value="">Nivel de Importancia</option>
+                  <option value="1">Importante</option>
+                  <option value="2">Urgente</option>
+                  <option value="3">Recado</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por Favor, Seleccione una Opción
+                  </div>
+                <label for="floatingSelectGrid">Seleccione el Nivel de Importancia de la Nota</label>
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Titulo de la Nota</label>
+                <input type="email" class="form-control" id="NotaTitulo" placeholder="Ingresa el titulo de la nota" aria-describedby="emailHelp">
+                <div class="invalid-feedback">
+                    Coloque un Titulo menor a 20 caracteres (Letras o Números)
+                  </div>
+            </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                <textarea class="form-control" placeholder="Ingresa el contenido de la carta" id="DescripNots" rows="4"></textarea>
+                <div class="invalid-feedback">
+                    Coloque una Descripción menor a 140 caracteres (Letras o Números) 
+                  </div>
+              </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="GenerarNota" class="btn btn-primary">Generar</button>
+        </div>
+      </div>
+    </div>
+  </div>

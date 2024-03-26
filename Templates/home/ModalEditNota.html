@@ -1,0 +1,46 @@
+<div class="modal fade" id="ModalEditarNota" data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edita la Nota</h5>
+          <button type="button" class="btn-close" id="" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="mb-3">
+              <div class="form-floating">
+                <select class="form-select" id="SlectorNivelImportEdit" aria-label="Floating label select example">
+                  <option selected value="">Nivel de Importancia</option>
+                  <option value="1">Importante</option>
+                  <option value="2">Urgente</option>
+                  <option value="3">Recado</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por Favor, Seleccione una Opción o cambie la opcion actual
+                  </div>
+                <label for="floatingSelectGrid">Seleccione el Nivel de Importancia de la Nota</label>
+              </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Titulo de la Nota</label>
+                <input type="email" class="form-control" id="NotaTituloEdit" placeholder="Ingresa el titulo de la nota" aria-describedby="emailHelp">
+                <div class="invalid-feedback">
+                    Coloque o cambie el Titulo menor a 20 caracteres (Letras o Números)
+                  </div>
+                </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                <textarea class="form-control" placeholder="Ingresa la descripción del error" id="DescripNotsEdit" rows="4"></textarea>
+                <div class="invalid-feedback">
+                    Coloque o cambie la Descripción menor a 140 caracteres (Letras o Números) 
+                  </div>
+              </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" id="EditarNota" class="btn btn-warning btn-sm">Cambiar</button>
+        </div>
+      </div>
+    </div>
+  </div>

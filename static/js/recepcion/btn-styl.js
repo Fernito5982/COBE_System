@@ -3,12 +3,13 @@ var id = null;
 var tr = null;
 var NroDes = 1;
 
-function but_dis(){
-    let but = document.getElementById("but-tic");
-    let not = document.getElementById("but-not");
-    let desc = document.getElementById('but-two-fu');
+let but = document.getElementById("but-tic");
+let not = document.getElementById("but-not");
+let desc = document.getElementById('but-two-fu');
+
+desc.addEventListener('click', e=>{
     if(NroDes == 1){
-        desc.disabled = true;
+        desc.style.pointerEvents = 'none';
         but.disabled = true;
         not.disabled = true;
         var pos1 = 15;
@@ -18,7 +19,7 @@ function but_dis(){
         id = setInterval(frame1, 1)
         tr = setInterval(frame2, 1)
         function frame1(){
-            if(pos1 == 75){
+            if(pos1 == 70){
                 clearInterval(id);
             } else {
                 pos1++;
@@ -26,10 +27,10 @@ function but_dis(){
             }
         }
         function frame2(){
-            if(pos2 == 115){
+            if(pos2 == 110){
                 clearInterval(tr);
                 NroDes = 0;
-                desc.disabled = false;
+                desc.style.pointerEvents = 'all';
                 but.disabled = false;
                 not.disabled = false;
             } else {
@@ -39,11 +40,11 @@ function but_dis(){
         }
     }else{
 
-            desc.disabled = true;
+            desc.style.pointerEvents = 'none';
             but.disabled = true;
             not.disabled = true;
-            var pos1 = 75;
-            var pos2 = 115;
+            var pos1 = 70;
+            var pos2 = 110;
             clearInterval(id);
             clearInterval(tr);
             id = setInterval(frame3, 1)
@@ -60,7 +61,7 @@ function but_dis(){
                 if(pos2 < 14){
                     clearInterval(tr);
                     NroDes = 1;
-                    desc.disabled = false;
+                    desc.style.pointerEvents = 'all';
                     but.disabled = false;
                     not.disabled = false;
                 } else {
@@ -70,4 +71,4 @@ function but_dis(){
             }
         
     }
-}
+})
