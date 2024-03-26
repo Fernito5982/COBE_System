@@ -67,6 +67,9 @@ class Rango(models.Model):
     id_Rango = models.BigAutoField(primary_key=True)
     Rango = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.Rango
+
 
 class Personal(models.Model):
     id_Personal = models.BigAutoField(primary_key=True)
@@ -76,9 +79,30 @@ class Personal(models.Model):
     Rol = models.ForeignKey(Rango, on_delete=models.CASCADE)
     Usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.Matricula.Nombre_Alumno
+
 
 class AsesorAcademico(models.Model):
     id_Asesor = models.BigAutoField(primary_key=True)
     Personal = models.ForeignKey(Personal, on_delete=models.CASCADE)
     Horarios = models.TextField()
     Materias = models.TextField()
+
+    def __str__(self):
+        return self.Personal.Matricula.Nombre_Alumno
+
+
+class Tipo_Insidencia(models.Model):
+    id_insidencia = models.BigAutoField(primary_key=True)
+    Tipo = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.Tipo
+
+
+class Ticket(models.Model):
+    id_Ticket = models.BigAutoField(primary_key=True)
+    asunto = models.ForeignKey(Tipo_Insidencia, on_delete=models.CASCADE)
+    descripcion = models.TextField()
+    Estatus = models.CharField(max_length=100)

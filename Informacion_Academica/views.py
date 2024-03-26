@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 
 
-from Informacion_Academica.models import Alumno, ProgramaAcademico, Materia, AsesoriaAcademica, Personal, AsesorAcademico
+from Informacion_Academica.models import Alumno, ProgramaAcademico, Materia, AsesoriaAcademica, Personal, AsesorAcademico, Tipo_Insidencia, Ticket
 
 # Funciones Asesorias Academicas
 
@@ -185,6 +185,25 @@ def ObtenerInformacionAsesores(request):
         info = {
             "message": "Success",
             "asesores_informacion": asesores_lista,
+        }
+
+    except:
+        info = {
+            "message": "Not Found",
+        }
+
+    return JsonResponse(info)
+
+
+def Obtener_Tipo_Insidencias(request):
+    insidencias = Tipo_Insidencia.objects.all()
+    try:
+        insidencias = Tipo_Insidencia.objects.all()
+        insidencias_serializadas = list(insidencias.values())
+
+        info = {
+            "message": "Success",
+            "insidencias": insidencias_serializadas,
         }
 
     except:
