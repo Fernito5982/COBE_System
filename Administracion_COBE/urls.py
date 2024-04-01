@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from Administracion_COBE.views import Home, FormularioAsesoria, FormularioAsesoriasNuevosAlumnos, AlertaConfirmacion, HomeRecepcion, RegistroDiario, UsuarioInicioSesion, login_usuario, logout_usuario, AgendarAsesoria, Horarios
 
-from Informacion_Academica.views import Buscar_Matricula, Obtener_Carreras, Obtener_Materias, Obtener_Temas, ObtenerAsesoria, Obtener_Asesorias_Pendientes, ObtenerInformacionAsesores
+from Informacion_Academica.views import Buscar_Matricula, Obtener_Carreras, Obtener_Materias, Obtener_Temas, ObtenerAsesoria, Obtener_Asesorias_Pendientes, ObtenerInformacionAsesores, Obtener_Tipo_Insidencias
 
 from RecepcionCOBE.views import ObtenerServicios, ObtenerRegistroDiario
 
@@ -46,7 +46,8 @@ urlpatterns = [
     path('Recepcion', HomeRecepcion, name='Recepcion'),
     path('RegistroDiario', RegistroDiario),
     path('Servicios', ObtenerServicios),
-    path('Api/ObtenerRegistroDiario', ObtenerRegistroDiario)
+    path('Api/ObtenerRegistroDiario', ObtenerRegistroDiario),
+    path('Api/ObtenerTipoInsidencias', Obtener_Tipo_Insidencias)
 
 
 

@@ -1,8 +1,10 @@
 import { $BtnTicketError, $AsuntoTicket, $DescricpionTicket, $BotonTicket, $BtnCancel } from "./QuerySelectors.js"
 import { $MandarTicketError } from "./Modales.js";
+import { ObtenerInsidencias } from "./GenerarRegistroDiario/CargarInputsInsidentes.js";
 
 $BtnTicketError.addEventListener('click', e=>{
     e.preventDefault();
+    ObtenerInsidencias();
     $MandarTicketError.show();
 })
 
