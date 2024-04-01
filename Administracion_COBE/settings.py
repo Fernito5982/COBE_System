@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'Administracion_COBE.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'administracion_COBE',  # Reemplaza con el nombre de tu base de datos
+        'NAME': 'AdministracionCOBE',  # Reemplaza con el nombre de tu base de datos
         'USER': 'root',     # Reemplaza con el nombre de usuario de MySQL
-        'PASSWORD': '',  # Reemplaza con la contraseña de MySQL
+        'PASSWORD': 'MEXICO2023',  # Reemplaza con la contraseña de MySQL
         'HOST': 'localhost',         # Si la base de datos está en local, déjalo como 'localhost'
         'PORT': '3306',              # Puerto de MySQL, por defecto es '3306'
 
