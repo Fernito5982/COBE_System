@@ -74,9 +74,4 @@ def logout_usuario(request):
 
 
 def InformacionUsuario():
-    personal_obj = Personal.objects.get(pk=1)
-    usuario = personal_obj.Usuario
-    username = usuario.first_name
-
-    informacion_personal = personal_obj.Matricula
-    Matricula = informacion_personal.Matricula
+    pass
