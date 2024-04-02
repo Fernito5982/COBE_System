@@ -212,3 +212,31 @@ def Obtener_Tipo_Insidencias(request):
         }
 
     return JsonResponse(info)
+
+@csrf_exempt
+def ObtenerTicket(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body.decode('utf-8'))
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Formato JSON no válido'}, status=400)
+
+        # Manipulamos el JSON de la Asesoria
+        AlmacenarTicketDB(data)
+        return JsonResponse({'message': 'Success'})
+    else:
+        return JsonResponse({'message': 'error'}, status=405)
+
+
+def AlmacenarTicketDB(Tickets):
+    insidencia_id = int(Tickets['Asunto'])
+    insidencia_instancia = Tipo_Insidencia.objects.get(id_insidencia = insidencia_id)
+
+    ticketDB = Ticket(
+        asunto = insidencia_instancia,
+        Estatus  = "Pendiente",
+        descripcion = Tickets['Descripcion']
+    )
+
+    ticketDB.save()
+

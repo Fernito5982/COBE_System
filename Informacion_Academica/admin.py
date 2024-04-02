@@ -22,7 +22,7 @@ class TipoInsidenciaAdmin(admin.ModelAdmin):
 
 
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ('id_Ticket', 'asunto', 'descripcion', 'Estatus')
+    list_display = ('asunto', 'descripcion', 'Estatus')
 
 
 admin.site.register(ProgramaAcademico)

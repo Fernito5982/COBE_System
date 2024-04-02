@@ -17,19 +17,25 @@ $BtnCancel.addEventListener('click', e=>{
     $DescricpionTicket.classList.remove('is-invalid');
 })
 
-$BotonTicket.addEventListener('click', e=>{
+// Funcion Detonadora de evento|
+$BotonTicket.addEventListener('click', async(e)=>{
     e.preventDefault();
     ValidarTicket($AsuntoTicket);
     ValidarTicket($DescricpionTicket);
 
     if($DescricpionTicket.value != '' && $AsuntoTicket.value != ''){
         const Tic = CopitTicket();
-        ConvertirJSON(Tic);
-        $MandarTicketError.hide();
-        $AsuntoTicket.value = '';
-        $DescricpionTicket.value = '';
-        $AsuntoTicket.classList.remove('is-valid');
-        $DescricpionTicket.classList.remove('is-valid');
+        try {
+            const respuesta = await EnviarTicket(Tic);
+            $MandarTicketError.hide();
+            $AsuntoTicket.value = '';
+            $DescricpionTicket.value = '';
+            $AsuntoTicket.classList.remove('is-valid');
+            $DescricpionTicket.classList.remove('is-valid');
+        } catch (error) {
+            console.error('Error al enviar el ticket:', error);
+        }
+        
     }
 })
 
@@ -68,7 +74,36 @@ function CopitTicket(){
     return(NewTicket);
 }
 
-function ConvertirJSON(tic){
-    console.log(JSON.stringify(tic))
-    return JSON.stringify(tic);
+
+async function EnviarTicket(tic){
+   try {
+        const response = await EnviarTicketAPI(tic);
+        return response;
+   } catch (error) {
+        reject(error);
+   }
+}
+
+async function EnviarTicketAPI(tic) {
+    try {
+
+        const response = await fetch('Api/ObtenerTicket', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(tic)
+        });
+
+        if (!response.ok){
+            throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
+        }
+
+        const responseData = await response.json();
+
+        return responseData;
+
+    } catch (error) {
+        console.error('Error',error.message);
+    }
 }
