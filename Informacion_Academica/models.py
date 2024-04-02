@@ -41,27 +41,6 @@ class Alumno(models.Model):
         return self.Matricula
 
 
-class AsesoriaAcademica(models.Model):
-
-    id_Asesoria = models.BigAutoField(primary_key=True)
-    Matricula = models.CharField(max_length=6)
-    Nombre_Alumno = models.CharField(max_length=500)
-    Telefono = models.CharField(max_length=10)
-    Correo = models.CharField(max_length=24)
-    Semestre = models.CharField(max_length=2)
-    NumMaterias = models.CharField(max_length=2)
-    Carrera = models.CharField(max_length=500)
-    Materia = models.CharField(max_length=100)
-    Reprobadas = models.CharField(max_length=2)
-    Tema = models.TextField()
-    Horario = models.TextField()
-    Comentario = models.TextField()
-    Asesor = models.CharField(max_length=500)
-    Estatus = models.CharField(max_length=11)
-
-    def __str__(self):
-        return self.Matricula
-
 
 class Rango(models.Model):
     id_Rango = models.BigAutoField(primary_key=True)
@@ -78,19 +57,66 @@ class Personal(models.Model):
         upload_to='profile_pictures/', blank=True, null=True)
     Rol = models.ForeignKey(Rango, on_delete=models.CASCADE)
     Usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    Horario = models.TextField(default="lunes")
+    Huella = models.CharField(max_length=50,default="1")
 
     def __str__(self):
         return self.Matricula.Nombre_Alumno
-
-
+    
 class AsesorAcademico(models.Model):
     id_Asesor = models.BigAutoField(primary_key=True)
     Personal = models.ForeignKey(Personal, on_delete=models.CASCADE)
-    Horarios = models.TextField()
     Materias = models.TextField()
 
     def __str__(self):
         return self.Personal.Matricula.Nombre_Alumno
+
+class AsesorPsicologico(models.Model):
+    id_Asesor = models.BigAutoField(primary_key=True)
+    Personal = models.ForeignKey(Personal, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.Personal.Matricula.Nombre_Alumno
+
+class EstatusAsesoria(models.Model):
+    id_Estatus = models.BigAutoField(primary_key=True)
+    Estatus = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.Estatus
+
+
+class AsesoriaAcademica(models.Model):
+
+    id_Asesoria = models.BigAutoField(primary_key=True)
+    Matricula = models.CharField(max_length=6)
+    Nombre_Alumno = models.CharField(max_length=500)
+    Telefono = models.CharField(max_length=10)
+    Correo = models.CharField(max_length=24)
+    Semestre = models.CharField(max_length=2)
+    NumMaterias = models.CharField(max_length=2)
+    Carrera = models.CharField(max_length=500)
+    Materia = models.CharField(max_length=100)
+    Reprobadas = models.CharField(max_length=2)
+    Tema = models.TextField()
+    Horario = models.TextField()
+    Comentario = models.TextField()
+    Asesor = models.ForeignKey(AsesorAcademico, on_delete = models.CASCADE)
+    Estatus = models.ForeignKey(EstatusAsesoria,on_delete=models.CASCADE)
+    Asistencia = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.Matricula
+
+class AsesoriaPsicologica(models.Model):
+    id_Asesoria = models.BigAutoField(primary_key=True)
+    Matricula = models.CharField(max_length=6)
+    Telefono = models.CharField(max_length=10)
+    Asesor = models.ForeignKey(AsesorAcademico, on_delete = models.CASCADE)
+    Asistencia = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.Matricula
 
 
 class Tipo_Insidencia(models.Model):
