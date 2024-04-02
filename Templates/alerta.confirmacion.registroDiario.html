@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{%static 'css/index/style.css' %}" />
+
+    <!-- Iconos -->
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Registro Almacenado</title>
+</head>
+<body class="bg-success ">
+    
+     
+    <div class="container d-flex flex-column justify-content-center ">
+        <h1 class="text-white text-center mt-5 ">El registro Fue Generada de Manera Correcta</h1>
+        <img  src="{%static 'img/5289675.png'%}" class="text-center w-25 align-self-center mt-4 " alt="">
+        <h4 class="align-self-center text-white ">Gracias por colaborar</h4>
+        <a class="btn btn-warning w-25 mt-4 align-self-center" href="/Recepcion">Aceptar</a>
+    </div>
+
+
+    <!-- JAVASCRIPTS -->
+    <script src="{% static '/bootstrap-5.0.2-dist/js/bootstrap.min.js' %}"></script>
+
+  </body>
+</html>

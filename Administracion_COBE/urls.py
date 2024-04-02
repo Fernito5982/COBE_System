@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Administracion_COBE.views import Home, FormularioAsesoria, FormularioAsesoriasNuevosAlumnos, AlertaConfirmacion, HomeRecepcion, RegistroDiario, UsuarioInicioSesion, login_usuario, logout_usuario, AgendarAsesoria, Horarios
+from Administracion_COBE.views import Home, FormularioAsesoria, FormularioAsesoriasNuevosAlumnos, AlertaConfirmacion, HomeRecepcion, RegistroDiario, UsuarioInicioSesion, login_usuario, logout_usuario, AgendarAsesoria, Horarios,AlertaConfirmacionRegistro
 
 from Informacion_Academica.views import Buscar_Matricula, Obtener_Carreras, Obtener_Materias, Obtener_Temas, ObtenerAsesoria, Obtener_Asesorias_Pendientes, ObtenerInformacionAsesores, Obtener_Tipo_Insidencias,ObtenerTicket
 
@@ -47,6 +47,7 @@ urlpatterns = [
     path('RegistroDiario', RegistroDiario),
     path('Servicios', ObtenerServicios),
     path('Api/ObtenerRegistroDiario', ObtenerRegistroDiario),
+    path('RegistroGenerado', AlertaConfirmacionRegistro),
     path('Api/ObtenerTicket', ObtenerTicket),
     path('Api/ObtenerTipoInsidencias', Obtener_Tipo_Insidencias)
 

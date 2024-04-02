@@ -125,5 +125,5 @@ $BtnSonCorrectos.addEventListener('click', async(e)=>{
    } catch (error) {
         console.error('Error al enviar la asesoría:', error);
     }
-    window.location = 'Recepcion';
+    window.location = 'RegistroGenerado';
 });

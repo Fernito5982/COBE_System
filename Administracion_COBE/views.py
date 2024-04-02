@@ -25,6 +25,10 @@ def FormularioAsesoriasNuevosAlumnos(request):
 def AlertaConfirmacion(request):
     return render(request, 'alerta.confirmacion.html')
 
+@login_required
+def AlertaConfirmacionRegistro(request):
+    return render(request, 'alerta.confirmacion.registroDiario.html')
+
 
 @login_required
 def HomeRecepcion(request):
