@@ -29,7 +29,8 @@ async function ObtenerInsidenciasAPI() {
 
 
 function GenerarOptionsInsidencias(insidencias) {
-    
+
+    $AsuntoTicket.innerHTML = '<option selected value="">Asuntos</option>'
     insidencias.forEach(insidencia => {
         const option = document.createElement('option');
         option.textContent = insidencia.Tipo
