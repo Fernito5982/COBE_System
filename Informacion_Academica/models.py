@@ -56,9 +56,9 @@ class Personal(models.Model):
     Imagen = models.ImageField(
         upload_to='profile_pictures/', blank=True, null=True)
     Rol = models.ForeignKey(Rango, on_delete=models.CASCADE)
-    Usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    Usuario = models.ForeignKey(User, on_delete=models.CASCADE,blank=True,null=True)
     Horario = models.TextField(default="lunes")
-    Huella = models.CharField(max_length=50,default="1")
+    Huella = models.CharField(max_length=50,blank=True,null=True)
 
     def __str__(self):
         return self.Matricula.Nombre_Alumno
@@ -101,7 +101,7 @@ class AsesoriaAcademica(models.Model):
     Tema = models.TextField()
     Horario = models.TextField()
     Comentario = models.TextField()
-    Asesor = models.ForeignKey(AsesorAcademico, on_delete = models.CASCADE)
+    Asesor = models.ForeignKey(AsesorAcademico, on_delete = models.CASCADE,blank=True,null=True)
     Estatus = models.ForeignKey(EstatusAsesoria,on_delete=models.CASCADE)
     Asistencia = models.BooleanField(default=False)
 
@@ -112,7 +112,7 @@ class AsesoriaPsicologica(models.Model):
     id_Asesoria = models.BigAutoField(primary_key=True)
     Matricula = models.CharField(max_length=6)
     Telefono = models.CharField(max_length=10)
-    Asesor = models.ForeignKey(AsesorAcademico, on_delete = models.CASCADE)
+    Asesor = models.ForeignKey(AsesorPsicologico, on_delete = models.CASCADE,blank=True,null=True)
     Asistencia = models.BooleanField(default=False)
 
     def __str__(self):

@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 
 
-from Informacion_Academica.models import Alumno, ProgramaAcademico, Materia, AsesoriaAcademica, Personal, AsesorAcademico, Tipo_Insidencia, Ticket
+from Informacion_Academica.models import Alumno, ProgramaAcademico, Materia, AsesoriaAcademica, Personal, AsesorAcademico, Tipo_Insidencia, Ticket,EstatusAsesoria
 
 # Funciones Asesorias Academicas
 
@@ -124,6 +124,8 @@ def ObtenerAsesoria(request):
 
 
 def AlmacenarAsesoriaDB(Asesoria):
+
+    Estatus_instancia = EstatusAsesoria.objects.get(id_Estatus = Asesoria['Estatus'])
     asesoriaDB = AsesoriaAcademica(
         Matricula=Asesoria['Matricula'],
         Nombre_Alumno=Asesoria['Nombre'],
@@ -137,8 +139,7 @@ def AlmacenarAsesoriaDB(Asesoria):
         Tema=Asesoria['Tema'],
         Horario=Asesoria['Horario'],
         Comentario=Asesoria['Comentario'],
-        Asesor=Asesoria['Asesor'],
-        Estatus=Asesoria['Estatus'],
+        Estatus=Estatus_instancia,
     )
 
     asesoriaDB.save()

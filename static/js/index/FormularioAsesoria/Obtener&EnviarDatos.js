@@ -66,8 +66,7 @@ const AsesoriaAcademica = {
     Tema: '',
     Horario: '',
     Comentario: 'Ninguno',
-    Asesor: 'No Asignado',
-    Estatus: 'Por Agendar',
+    Estatus: 3,
 }
 
 function  ObtenerDatosAsesoria(){
