@@ -132,3 +132,11 @@ class Ticket(models.Model):
     asunto = models.ForeignKey(Tipo_Insidencia, on_delete=models.CASCADE)
     descripcion = models.TextField()
     Estatus = models.CharField(max_length=100)
+
+class Nota(models.Model):
+    id_nota = models.BigAutoField(primary_key=True)
+    nivel = models.CharField(max_length = 50)
+    descripcion = models.TextField()
+    Titulo = models.CharField(max_length=19)
+
+

@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 
 
-from Informacion_Academica.models import Alumno, ProgramaAcademico, Materia, AsesoriaAcademica, Personal, AsesorAcademico, Tipo_Insidencia, Ticket,EstatusAsesoria
+from Informacion_Academica.models import Alumno, ProgramaAcademico, Materia, AsesoriaAcademica, Personal, AsesorAcademico, Tipo_Insidencia, Ticket,EstatusAsesoria,Nota
 
 # Funciones Asesorias Academicas
 
@@ -240,3 +240,26 @@ def AlmacenarTicketDB(Tickets):
 
     ticketDB.save()
 
+@csrf_exempt
+def ObtenerNota(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body.decode('utf-8'))
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Formato JSON no válido'}, status=400)
+
+        # Manipulamos el JSON de la Nota
+        AlmacenarNotaDB(data)
+        return JsonResponse({'message': 'Success'})
+    else:
+        return JsonResponse({'message': 'error'}, status=405)
+
+
+def AlmacenarNotaDB(notaobj):
+    
+    notaDB = Nota(
+        nivel = notaobj['NivelAsunto'],
+        Titulo  = notaobj['Titulo'],
+        descripcion = notaobj['Descripcion']    )
+
+    notaDB.save()
