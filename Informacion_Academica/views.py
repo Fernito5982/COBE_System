@@ -153,7 +153,6 @@ def ObtenerInformacionAsesores(request):
     try:
         # Obtener listado asesores
         asesores = AsesorAcademico.objects.all()
-
         # Recorremos el listado de asesores
         for asesor in asesores:
             # Informacion Asesor
@@ -167,7 +166,7 @@ def ObtenerInformacionAsesores(request):
 
             # Rellanamos el diccionario
             info_asesor["Materias"] = asesor.Materias
-            info_asesor["Horarios"] = asesor.Horarios
+            info_asesor["Horarios"] = asesor.Personal.Horario
             info_asesor["Imagen"] = asesor.Personal.Imagen.url
 
             # Buscamos la informacion faltante en otras tablas
