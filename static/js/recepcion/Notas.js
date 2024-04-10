@@ -168,10 +168,10 @@ class mostrar {
 
             switch(NivelAsunto){
                 case '1':
-                    color = 'danger';
+                    color = 'warning';
                     break;
                 case '2':
-                    color = 'warning';
+                    color = 'danger';
                     break;
                 case '3':
                     color = 'success';
