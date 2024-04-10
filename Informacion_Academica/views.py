@@ -241,7 +241,7 @@ def AlmacenarTicketDB(Tickets):
     ticketDB.save()
 
 @csrf_exempt
-def ObtenerNota(request):
+def EnviarNota(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body.decode('utf-8'))
@@ -260,6 +260,24 @@ def AlmacenarNotaDB(notaobj):
     notaDB = Nota(
         nivel = notaobj['NivelAsunto'],
         Titulo  = notaobj['Titulo'],
-        descripcion = notaobj['Descripcion']    )
+        descripcion = notaobj['Descripcion']    
+    )
 
     notaDB.save()
+
+def ObtenerNota(request):
+    try:
+        Notas_resultado = Nota.objects.all()
+        Notas_serializadas = list(Notas_resultado.values())
+   
+        info = {
+            "message": "Success",
+            "Notas": Notas_serializadas,
+        }
+
+    except:
+        info = {
+            "message": "Not Found",
+        }
+
+    return JsonResponse(info)

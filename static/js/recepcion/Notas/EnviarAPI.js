@@ -14,7 +14,7 @@ export async function AlmacenarBD(Notas){
 async function EnviarNotaAPI(Nota){
 
     try {
-        const response = await fetch('Api/ObtenerNota', {
+        const response = await fetch('Api/EnviarNota', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
