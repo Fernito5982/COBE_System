@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ProgramaAcademico, Materia, Tema, Alumno, Personal, Rango, AsesoriaAcademica, AsesorAcademico, Tipo_Insidencia, Ticket,AsesoriaPsicologica,AsesorPsicologico,EstatusAsesoria
+from .models import ProgramaAcademico, Materia, Tema, Alumno, Personal, Rango, AsesoriaAcademica, AsesorAcademico, Tipo_Insidencia, Ticket,AsesoriaPsicologica,AsesorPsicologico,EstatusAsesoria, Nota
 # Register your models here.
 
 
@@ -10,8 +10,10 @@ class AlumnoAdmin(admin.ModelAdmin):
 
 
 class PersonalAdmin(admin.ModelAdmin):
-    list_display = ('Matricula')
+    list_display = ('Matricula')  
 
+class NotasAdmin(admin.ModelAdmin):
+    list_display = ('id_Nota', 'nivel', ' descripcion', 'Titulo')
 
 class AsesoriasAdmin(admin.ModelAdmin):
     list_display = ('Matricula', 'Nombre_Alumno', 'Materia', 'Tema')
@@ -38,3 +40,4 @@ admin.site.register(AsesoriaAcademica, AsesoriasAdmin)
 admin.site.register(AsesorAcademico)
 admin.site.register(Tipo_Insidencia, TipoInsidenciaAdmin)
 admin.site.register(Ticket, TicketAdmin)
+admin.site.register(Nota)
