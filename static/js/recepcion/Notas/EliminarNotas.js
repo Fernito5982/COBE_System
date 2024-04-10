@@ -1,7 +1,7 @@
 import { $ModalComfirmarBorrar } from "../ModalRecep.js";
 import { $btnComfBorrar } from "../QuerySelectors.js";
 
-export async function EliminarNotas(id){
+export function EliminarNotas(id){
     try {
         $ModalComfirmarBorrar.show();
         $btnComfBorrar.onclick = () => EliminarNotaAPI(id);
@@ -13,23 +13,21 @@ export async function EliminarNotas(id){
 
 async function EliminarNotaAPI(id){
     try {
-        const response = await fetch('Api/ObtenerRegistroDiario', {
-            method: 'POST',
+        const response = await fetch(`Api/EliminarNota/${id}`, {
+            method: 'DELETE', // Cambiar a DELETE
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(Registro)
+            
         });
 
-        if (!response.ok){
+        if (!response.ok) {
             throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
         }
 
-        const responseData = await response.json();
-        console.log(responseData);
-        return responseData;
- 
+        console.log("La nota se eliminó correctamente");
+
     } catch (error) {
-        
+        console.error('Error al eliminar la nota:', error);
     }
 }

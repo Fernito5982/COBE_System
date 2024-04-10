@@ -281,3 +281,11 @@ def ObtenerNota(request):
         }
 
     return JsonResponse(info)
+
+@csrf_exempt
+def EliminarNota(request,id):
+    nota_a_eliminar = Nota.objects.get(id_nota=id)
+    nota_a_eliminar.delete()
+
+    return render(request,'home_recepcion/index.html')
+

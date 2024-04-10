@@ -58,6 +58,6 @@ export function imprimirnota(notas){
         AgregarBtns.appendChild(btnEliminar);
         AgregarBtns.appendChild(btnEdit);
 
-        btnEliminar.onclick = () => EliminarNotas(id);
+        btnEliminar.onclick = () => EliminarNotas(id_nota);
     });
 }
