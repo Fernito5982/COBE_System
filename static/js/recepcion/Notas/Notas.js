@@ -20,6 +20,26 @@ $BtnGenerarNot.addEventListener('click', e=>{
         Notas.Titulo = $Titulo.value;
         Notas.Descripcion = $DescripNotas.value;
         AlmacenarBD(Notas);
+        CerrarModalNotas();
     }
 })
 
+
+//Cerrar modal
+$BtnCancelNot.addEventListener('click', e=>{
+    e.preventDefault();
+    CerrarModalNotas();
+})
+
+function CerrarModalNotas() {
+    $ModalGenerarNota.hide();
+    $DescripNotas.value = '';
+    $NivelNotas.value = '';
+    $Titulo.value = '';
+    $DescripNotas.classList.remove('is-valid');
+    $NivelNotas.classList.remove('is-valid');
+    $DescripNotas.classList.remove('is-invalid');
+    $NivelNotas.classList.remove('is-invalid');
+    $Titulo.classList.remove('is-invalid');
+    $Titulo.classList.remove('is-valid');
+}

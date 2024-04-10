@@ -1,23 +1,25 @@
 
-export function AlmacenarBD(Notas){
-    const JsonNota = convertirJSON(Notas);
-    EnviarJSON(JsonNota);
+export async function AlmacenarBD(Notas){
+    
+    try {
+        const response = await EnviarNotaAPI(Notas);
+        return response.message;
+    } catch (error) {
+        reject(error)
+    }
+    
 }
 
-function convertirJSON(Notas){
-    console.log(JSON.stringify(Notas))
-    return JSON.stringify(Notas);
-}
 
-async function EnviarJSON(JsonNota){
+async function EnviarNotaAPI(Nota){
 
     try {
-        const response = await fetch('Api/ObtenerRegistroDiario', {
+        const response = await fetch('Api/ObtenerNota', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(Registro)
+            body: JSON.stringify(Nota)
         });
 
         if (!response.ok){
