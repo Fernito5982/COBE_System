@@ -1,20 +1,15 @@
 import { $ModalEditarNota } from "../ModalRecep.js";
 import { $DescripcionEdit, $NivelEdit, $TituloEdit, $btnEditar } from "../QuerySelectors.js";
-import { validarEdit } from "./ValidarEdit.js";
+import { EnviarNotaEditada } from "./EnviarAPI.js";
 
 
+export function EditarNota(Nota, id){
 
-export function EditarNota(id, nivel, descrip, titul){
+    const {Nivel, Descripcion, Titulo} = Nota
+
     $ModalEditarNota.show();
-    $NivelEdit.value = nivel;
-    $DescripcionEdit.value = descrip;
-    $TituloEdit.value = titul;
-
-    $btnEditar.onclick = () => confirmEdit($NivelEdit,$DescripcionEdit,$TituloEdit);
-}
-
-function confirmEdit(Nivel, Descrip, Titul){
-    validarEdit(Nivel, 100);
-    validarEdit(Descrip, 120);
-    validarEdit(Titul, 19);
+    $NivelEdit.value = Nivel;
+    $DescripcionEdit.value = Descripcion;
+    $TituloEdit.value = Titulo;
+    $btnEditar.onclick = () => EnviarNotaEditada($NivelEdit, $DescripcionEdit, $TituloEdit, id);
 }

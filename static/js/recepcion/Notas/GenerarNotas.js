@@ -1,6 +1,6 @@
 import { $htmlConNot } from "../QuerySelectors.js";
-import { EditarNota } from "./EditaNotas.js";
 import { EliminarNotas } from "./EliminarNotas.js";
+import { ObtenerNotasEditar } from "./ObtenerAPI.js";
 
 
 export function OrdenNotas(notas){
@@ -90,6 +90,6 @@ function imprimirnota(notas){
         AgregarBtns.appendChild(btnEdit);
 
         btnEliminar.onclick = () => EliminarNotas(id_nota);
-        btnEdit.onclick = () => EditarNota(id_nota, nivel, descripcion, Titulo);
+        btnEdit.onclick = () => ObtenerNotasEditar(id_nota);
     });
 }

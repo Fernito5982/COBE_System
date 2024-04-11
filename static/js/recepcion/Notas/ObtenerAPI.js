@@ -1,3 +1,4 @@
+import { EditarNota } from "./EditaNotas.js";
 import { OrdenNotas } from "./GenerarNotas.js";
 
 
@@ -26,3 +27,26 @@ try {
 }
 
 
+
+export async function ObtenerNotasEditar(id) {
+    try {
+        await ObtenerNotasEditarApi(id)
+
+    } catch (error) {
+        reject(error)
+    }
+}
+
+
+async function ObtenerNotasEditarApi(id) {
+
+try {
+    const respuesta = await fetch(`./Api/ObtenerNotaEditar/${id}`);
+    const resultado = await respuesta.json()
+    console.log(resultado);
+    EditarNota(resultado, id);
+
+    } catch (error) {
+    console.log(`Error en la Peticion ${error}`);
+    }
+}

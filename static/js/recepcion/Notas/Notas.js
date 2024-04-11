@@ -1,4 +1,4 @@
-import { $ModalGenerarNota, $ModalComfirmarBorrar, $ModalEditarNota } from "../ModalRecep.js";
+import { $ModalGenerarNota } from "../ModalRecep.js";
 import { $BtnNote, $BtnGenerarNot, $DescripNotas, $NivelNotas, $BtnCancelNot, $htmlConNot, $btnComfBorrar, $NivelEdit, $DescripcionEdit, $btnEditar, $Titulo, $TituloEdit } from "../QuerySelectors.js"
 import { AlmacenarBD } from "./EnviarAPI.js";
 import { Notas } from "./NotasObjetos.js";

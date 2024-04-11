@@ -5,3 +5,9 @@ export const Notas = {
     Titulo: '',
     Descripcion: ''
 }
+
+export const NotasEditas = {
+    Nivel: '',
+    Titulo: '',
+    Descripcion: ''
+}
