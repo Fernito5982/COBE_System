@@ -1,8 +1,39 @@
 import { $htmlConNot } from "../QuerySelectors.js";
+import { EditarNota } from "./EditaNotas.js";
 import { EliminarNotas } from "./EliminarNotas.js";
 
 
-export function imprimirnota(notas){
+export function OrdenNotas(notas){
+
+    for(var i = 0; i < notas.length; i++){
+        if(notas[i].nivel === 'Recado'){
+            notas[i].nivel = 'recado';
+        }
+    }
+
+    notas.sort(function (a, b) {
+        if (a.nivel > b.nivel) {
+            return 1;
+          }
+          if (a.nivel < b.nivel) {
+            return -1;
+          }
+          // a must be equal to b
+          return 0;
+    });
+
+    
+    for(var i = 0; i < notas.length; i++){
+        if(notas[i].nivel === 'recado'){
+            notas[i].nivel = 'Recado';
+        }
+    }
+
+    imprimirnota(notas);
+}
+
+
+function imprimirnota(notas){
        
     //Seleccionar, buscar y crear cada elemento y nota
     notas.forEach( nota => {
@@ -59,5 +90,6 @@ export function imprimirnota(notas){
         AgregarBtns.appendChild(btnEdit);
 
         btnEliminar.onclick = () => EliminarNotas(id_nota);
+        btnEdit.onclick = () => EditarNota(id_nota, nivel, descripcion, Titulo);
     });
 }

@@ -1,4 +1,4 @@
-import { imprimirnota } from "./GenerarNotas.js";
+import { OrdenNotas } from "./GenerarNotas.js";
 
 
 export async function ObtenerNotas() {
@@ -17,7 +17,7 @@ try {
     const respuesta = await fetch('./Api/ObtenerNota');
     const resultado = await respuesta.json()
     console.log(resultado.Notas);
-    imprimirnota(resultado.Notas);
+    OrdenNotas(resultado.Notas);
 
 } catch (error) {
     console.log(`Error en la Peticion ${error}`);

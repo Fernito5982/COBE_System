@@ -4,11 +4,17 @@ import { $btnComfBorrar } from "../QuerySelectors.js";
 export function EliminarNotas(id){
     try {
         $ModalComfirmarBorrar.show();
-        $btnComfBorrar.onclick = () => EliminarNotaAPI(id);
-        
+        $btnComfBorrar.onclick = () =>  ProcessEliminacion(id);
     } catch (error) {
         
     }
+}
+
+
+function ProcessEliminacion(id){
+    $ModalComfirmarBorrar.hide();
+    EliminarNotaAPI(id);
+    window.location = '/Recepcion'
 }
 
 async function EliminarNotaAPI(id){
@@ -20,7 +26,6 @@ async function EliminarNotaAPI(id){
             },
             
         });
-
         if (!response.ok) {
             throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
         }
