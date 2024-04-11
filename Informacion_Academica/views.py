@@ -289,3 +289,61 @@ def EliminarNota(request,id):
 
     return render(request,'home_recepcion/index.html')
 
+@csrf_exempt
+def ObtenerInfoNotas(request,id):
+
+    try:
+        nota_a_editar = Nota.objects.get(id_nota=id)
+   
+        info = {
+            "message": "Success",
+            "Nivel": nota_a_editar.nivel,
+            "Descripcion": nota_a_editar.descripcion,
+            "Titulo": nota_a_editar.Titulo
+        }
+
+    except:
+        info = {
+            "message": "Not Found",
+        }
+
+    return JsonResponse(info)
+
+
+@csrf_exempt
+def ObtenerNotaActualizar(request,idNota):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body.decode('utf-8'))
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Formato JSON no válido'}, status=400)
+
+            # Manipulamos el JSON de la Asesoria
+        ActualizarNotaDB(data,idNota)
+        return JsonResponse({'message': 'Success'})
+    else:
+        return JsonResponse({'message': 'error'}, status=405)
+    
+def ActualizarNotaDB(notaObj,idNota):
+    try:
+       
+
+        nota = Nota.objects.get(id_nota=idNota)
+        if 'nivel' in notaObj:
+            nota.nivel = notaObj['Nivel']
+        if 'descripcion' in notaObj:
+            nota.descripcion = notaObj['Descripcion']
+        if 'Titulo' in notaObj:
+            nota.Titulo = notaObj['Titulo']
+        
+        nota.save()
+        
+        return True
+    
+    except Nota.DoesNotExist:
+        print("Nota no encontrada")
+        return False
+    
+    except Exception as e:
+        print("Error al actualizar la nota:", str(e))
+        return False
