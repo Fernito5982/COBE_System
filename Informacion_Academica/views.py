@@ -327,11 +327,10 @@ def ObtenerNotaActualizar(request,idNota):
 def ActualizarNotaDB(notaObj,idNota):
     try:
        
-
         nota = Nota.objects.get(id_nota=idNota)
-        if 'nivel' in notaObj:
+        if 'Nivel' in notaObj:
             nota.nivel = notaObj['Nivel']
-        if 'descripcion' in notaObj:
+        if 'Descripcion' in notaObj:
             nota.descripcion = notaObj['Descripcion']
         if 'Titulo' in notaObj:
             nota.Titulo = notaObj['Titulo']

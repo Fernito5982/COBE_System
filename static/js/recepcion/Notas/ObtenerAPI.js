@@ -43,7 +43,7 @@ async function ObtenerNotasEditarApi(id) {
 try {
     const respuesta = await fetch(`./Api/ObtenerNotaEditar/${id}`);
     const resultado = await respuesta.json()
-    console.log(resultado);
+    
     EditarNota(resultado, id);
 
     } catch (error) {

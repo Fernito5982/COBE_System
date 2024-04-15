@@ -1,3 +1,4 @@
+import { $ModalEditarNota } from "../ModalRecep.js";
 import { NotasEditas } from "./NotasObjetos.js";
 import { validarTodo } from "./ValidarEdit.js";
 
@@ -53,13 +54,13 @@ async function ConvertiObjeto(Nivel, Descripcion, Tiutlo){
     NotasEditas.Nivel = Nivel.value;
     NotasEditas.Descripcion = Descripcion.value;
     NotasEditas.Titulo = Tiutlo.value;
-    console.log(NotasEditas);
+    
     return NotasEditas;
 }
 
 async function EnviarNotaEditaAPI(Nota, id){
     try {
-        const response = await fetch(`Api/EnviarNotaEditar/${id}`, {
+        const response = await fetch(`./Api/EnviarNotaEditar/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -72,7 +73,8 @@ async function EnviarNotaEditaAPI(Nota, id){
         }
 
         const responseData = await response.json();
-        console.log(responseData);
+        $ModalEditarNota.hide();
+        window.location = './Recepcion';
         return responseData;
 
 
